@@ -294,4 +294,88 @@ const countSheep = function (num) {
   return str;
 };
 
-console.log(Array(3));
+// (36) Draw stairs
+// https://www.codewars.com/kata/5b4e779c578c6a898e0005c5
+function drawStairs(n) {
+  let str = "I";
+  for (let i = 2; i <= n; i++) {
+    str += "\n" + " ".repeat(i - 1) + "I";
+  }
+  return str;
+}
+
+// (37) Expressions Matter
+// https://www.codewars.com/kata/5ae62fcf252e66d44d00008e
+function expressionMatter(a, b, c) {
+  let arr = [a + b + c, (a + b) * c, a + b * c, a * b * c, a * (b + c)];
+  return Math.max(...arr);
+}
+
+// (38) Student's Final Grade
+// https://www.codewars.com/kata/5ad0d8356165e63c140014d4
+function finalGrade(exam, projects) {
+  if (exam > 90 || projects > 10) {
+    return 100;
+  } else if (exam > 75 && projects >= 5) {
+    return 90;
+  } else if (exam > 50 && projects >= 2) {
+    return 75;
+  } else {
+    return 0;
+  }
+}
+
+// (39) Area or Perimeter
+// https://www.codewars.com/kata/5ab6538b379d20ad880000ab
+const areaOrPerimeter = function (l, w) {
+  return l === w ? l * w : 2 * l + 2 * w;
+};
+
+// (40) Help the Elite Squad of Brazilian forces BOPE
+// https://www.codewars.com/kata/5ab52526379d20736b00000e
+function magNumber(info) {
+  const weapons = {
+    PT92: 17,
+    M4A1: 30,
+    M16A2: 30,
+    PSG1: 5,
+  };
+  return Math.ceil((info[1] * 3) / weapons[info[0]]);
+}
+
+// (41) The Feast of Many Beasts
+// https://www.codewars.com/kata/5aa736a455f906981800360d
+function feast(beast, dish) {
+  return (
+    beast[0] === dish[0] && beast[beast.length - 1] === dish[dish.length - 1]
+  );
+}
+
+// (42) Find Nearest square number
+// https://www.codewars.com/kata/5a805d8cafa10f8b930005ba
+// function nearestSq(n) {
+//   return (n ** 0.5).toFixed() ** 2;
+// }
+function nearestSq(n) {
+  return Math.pow(Math.round(Math.sqrt(n)), 2);
+}
+
+// (43) Cat years, Dog years
+// https://www.codewars.com/kata/5a6663e9fd56cb5ab800008b
+let humanYearsCatYearsDogYears = function (humanYears) {
+  if (humanYears === 1) {
+    return [1, 15, 15];
+  }
+  if (humanYears === 2) {
+    return [2, 24, 24];
+  }
+
+  let [humanAge, catAge, dogAge] = [humanYears, 24, 24];
+  while (humanYears > 2) {
+    humanYears--;
+    catAge += 4;
+    dogAge += 5;
+  }
+
+  return [humanAge, catAge, dogAge];
+};
