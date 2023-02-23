@@ -1,6 +1,6 @@
 # Codewars Solutions 🧑‍💻
 
-> All of my codewars solutions.
+> All of my codewars solutions. ✌️
 
 ## My Codewars Rank
 

@@ -379,3 +379,143 @@ let humanYearsCatYearsDogYears = function (humanYears) {
 
   return [humanAge, catAge, dogAge];
 };
+
+// (44) Century From Year
+// https://www.codewars.com/kata/5a3fe3dde1ce0e8ed6000097
+function century(year) {
+  return Math.ceil(year / 100);
+}
+
+// (45) Define a card suit
+// https://www.codewars.com/kata/5a360620f28b82a711000047
+function defineSuit(card) {
+  const suits = {
+    "♣": "clubs",
+    "♦": "diamonds",
+    "♥": "hearts",
+    "♠": "spades",
+  };
+  return suits[card[card.length - 1]];
+}
+
+// (46) Multiple of index
+// https://www.codewars.com/kata/5a34b80155519e1a00000009
+function multipleOfIndex(array) {
+  return array.filter((item, index) => item % index === 0);
+}
+
+// (47) CSV representation of array
+// https://www.codewars.com/kata/5a34af40e1ce0eb1f5000036
+function toCsvText(array) {
+  let csv = "";
+  for (let item of array) {
+    csv += item.join() + "\n";
+  }
+  return csv.slice(0, -1);
+}
+
+// (48) Multiplication table for number
+// https://www.codewars.com/kata/5a2fd38b55519ed98f0000ce
+// function multiTable(number) {
+//   let table = [];
+//   for (let i = 1; i <= 10; i++) {
+//     table.push(`${i} * ${number} = ${i * number}`);
+//   }
+//   return table.join("\n");
+// }
+function multiTable(number) {
+  let table = "";
+  for (let i = 1; i <= 10; i++) {
+    table += `${i} * ${number} = ${i * number}\n`;
+  }
+  return table.slice(0, -1);
+}
+
+// (49) Type of sum
+// https://www.codewars.com/kata/5a2e9ae2b6cfd7692a0000ba
+function typeOfSum(a, b) {
+  return typeof (a + b);
+}
+
+// (50) Array plus array
+// https://www.codewars.com/kata/5a2be17aee1aaefe2a000151
+function arrayPlusArray(arr1, arr2) {
+  return [...arr1, ...arr2].reduce((a, b) => a + b);
+}
+
+// (51) The falling speed of petals
+// https://www.codewars.com/kata/5a0be7ea8ba914fc9c00006b
+function sakuraFall(v) {
+  return v > 0 ? (5 * 80) / v : 0;
+}
+
+// (52) Third Angle of a Triangle
+// https://www.codewars.com/kata/5a023c426975981341000014
+function otherAngle(a, b) {
+  return 180 - (a + b);
+}
+
+// (53) Reversed sequence
+// https://www.codewars.com/kata/5a00e05cc374cb34d100000d
+const reverseSeq = (n) => {
+  let arr = [];
+  for (let i = n; i > 0; i--) {
+    arr.push(i);
+  }
+  return arr;
+};
+
+// (54) Convert to Binary
+// https://www.codewars.com/kata/59fca81a5712f9fa4700159a
+// function toBinary(n) {
+//   return Number(n.toString(2));
+// }
+function toBinary(n) {
+  let binary = "";
+  let rem = 0;
+  while (n !== 0) {
+    rem = n % 2;
+    n = parseInt(n / 2);
+    binary += rem;
+  }
+  return Number(binary.split("").reverse().join(""));
+}
+
+// (55) Potenciation
+// https://www.codewars.com/kata/59fc72fe235f93838b002235
+// function power(x, y) {
+//   return x ** y;
+// }
+function power(x, y) {
+  let total = 1;
+  for (i = 1; i <= y; i++) {
+    total *= x;
+  }
+  return total;
+}
+
+// (56) !a == a?!
+// https://www.codewars.com/kata/59f9796cffe75f9299000025
+// const a = [];
+const a = "0";
+
+// (57) Return the day
+// https://www.codewars.com/kata/59dd3ccdded72fc78b000b25
+function whatday(num) {
+  const weekdays = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return weekdays[num - 1] || "Wrong, please enter a number between 1 and 7";
+}
+
+// (58) Is he gonna survive?
+// https://www.codewars.com/kata/59ca8246d751df55cc00014c
+function hero(bullets, dragons) {
+  return bullets >= dragons * 2;
+}
