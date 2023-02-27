@@ -519,3 +519,241 @@ function whatday(num) {
 function hero(bullets, dragons) {
   return bullets >= dragons * 2;
 }
+
+// (59) Simple Fun #352: Reagent Formula
+// https://www.codewars.com/kata/59c8b38423dacc7d95000008
+function isValid(formula) {
+  if (
+    (formula.includes(7) || formula.includes(8)) &&
+    !(formula.includes(1) && formula.includes(2)) &&
+    !(formula.includes(3) && formula.includes(4)) &&
+    ((!formula.includes(5) && !formula.includes(6)) ||
+      (formula.includes(5) && formula.includes(6)))
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+// (60) For Twins: 2. Math operations
+// https://www.codewars.com/kata/59c287b16bddd291c700009a
+function iceBrickVolume(radius, bottleLength, rimLength) {
+  return 2 * radius * radius * (bottleLength - rimLength);
+}
+
+// (61) For Twins: 1. Types
+// https://www.codewars.com/kata/59c1302ecb7fb48757000013
+function typeValidation(variable, type) {
+  return typeof variable === type;
+}
+
+// (62) Find the Integral
+// https://www.codewars.com/kata/59811fd8a070625d4c000013
+function integrate(c, e) {
+  return `${c / ++e}x^${e}`;
+}
+
+// (63) USD => CNY
+// https://www.codewars.com/kata/5977618080ef220766000022
+function usdcny(usd) {
+  return (usd * 6.75).toFixed(2) + " Chinese Yuan";
+}
+
+// (64) Contamination #1 -String-
+// https://www.codewars.com/kata/596fba44963025c878000039
+function contamination(text, char) {
+  return char.repeat(text.length);
+}
+
+// (65) Aspect Ratio Cropping - Part 1
+// https://www.codewars.com/kata/596e4ef7b61e25981200009f
+function aspectRatio(x, y) {
+  return [Math.ceil((y * 16) / 9), y];
+}
+
+// (66) FIXME: Replace all dots
+// https://www.codewars.com/kata/596c6eb85b0f515834000049
+// const replaceDots = function(str) {
+//   return str.replace(/\./g,'-');
+// }
+const replaceDots = function (str) {
+  return str.split(".").join("-");
+};
+
+// (67) Sum The Strings
+// https://www.codewars.com/kata/5966e33c4e686b508700002d
+// function sumStr(a, b) {
+//   return String(+a + +b);
+// }
+function sumStr(a, b) {
+  return String(Number(a) + Number(b));
+}
+
+// (68) Take the Derivative
+// https://www.codewars.com/kata/5963c18ecb97be020b0000a2
+function derive(c, e) {
+  return c * e + "x^" + (e - 1);
+}
+
+// (69) Capitalization and Mutability
+// https://www.codewars.com/kata/595970246c9b8fa0a8000086
+function capitalizeWord(word) {
+  return word[0].toUpperCase() + word.slice(1);
+}
+
+// (70) Pythagorean Triple
+// https://www.codewars.com/kata/5951d30ce99cf2467e000013
+function isPythagoreanTriple(i) {
+  return i.sort((a, b) => a - b) && i[0] ** 2 + i[1] ** 2 === i[2] ** 2;
+}
+
+// (71) 5 without numbers !!
+// https://www.codewars.com/kata/59441520102eaa25260000bf
+// function unusualFive() {
+//   return ["", "", "", "", ""].length;
+// }
+function unusualFive() {
+  return "aaaaa".length;
+}
+
+// (72) Count Odd Numbers below n
+// https://www.codewars.com/kata/59342039eb450e39970000a6
+function oddCount(n) {
+  return Math.floor(n / 2);
+}
+
+// (73) Get Nth Even Number
+// https://www.codewars.com/kata/5933a1f8552bc2750a0000ed
+function nthEven(n) {
+  return n * 2 - 2;
+}
+
+// (74) 8kyu interpreters: HQ9+
+// https://www.codewars.com/kata/591588d49f4056e13f000001
+function HQ9(code) {
+  if (code === "H") return "Hello World!";
+  if (code === "Q") return "Q";
+  if (code === "9") return bottle(99);
+
+  function bottle(n) {
+    if (n === 2) {
+      return `2 bottles of beer on the wall, 2 bottles of beer.
+Take one down and pass it around, 1 bottle of beer on the wall.
+1 bottle of beer on the wall, 1 bottle of beer.
+Take one down and pass it around, no more bottles of beer on the wall.
+No more bottles of beer on the wall, no more bottles of beer.
+Go to the store and buy some more, 99 bottles of beer on the wall.`;
+    } else {
+      return (
+        `${n} bottles of beer on the wall, ${n} bottles of beer.
+Take one down and pass it around, ${n - 1} bottles of beer on the wall.
+` + bottle(n - 1)
+      );
+    }
+  }
+}
+
+// (75) Simple Fun #261: Whose Move
+// https://www.codewars.com/kata/59126992f9f87fd31600009b
+// function whoseMove(lastPlayer, win) {
+//   return (
+//     (lastPlayer === "white" && win && "white") ||
+//     (lastPlayer === "white" && !win && "black") ||
+//     (lastPlayer === "black" && win && "black") ||
+//     (lastPlayer === "black" && !win && "white")
+//   );
+// }
+function whoseMove(lastPlayer, win) {
+  return win ? lastPlayer : lastPlayer === "white" ? "black" : "white";
+}
+
+// (76) Find the first non-consecutive number
+// https://www.codewars.com/kata/58f8a3a27a5c28d92e000144
+function firstNonConsecutive(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (arr[i] + 1 !== arr[i + 1]) {
+      return arr[i + 1];
+    }
+  }
+  return null;
+}
+
+// (77) Geometry Basics: Circle Circumference in 2D
+// https://www.codewars.com/kata/58e43389acfd3e81d5000a88
+function circleCircumference(circle) {
+  return 2 * Math.PI * circle.radius;
+}
+
+// (78) Geometry Basics: Distance between points in 2D
+// https://www.codewars.com/kata/58dced7b702b805b200000be
+// function distanceBetweenPoints(a, b) {
+//   return ((a.x - b.x) ** 2 + (a.y - b.y) ** 2) ** 0.5;
+// }
+function distanceBetweenPoints(a, b) {
+  return Math.hypot(a.x - b.x, a.y - b.y);
+}
+
+// (79) Geometry Basics: Circle Area in 2D
+// https://www.codewars.com/kata/58e3f824a33b52c1dc0001c0
+function circleArea(circle) {
+  return Math.PI * circle.radius ** 2;
+}
+
+// (80) Do you speak "English"?
+// https://www.codewars.com/kata/58dbdccee5ee8fa2f9000058
+function spEng(sentence) {
+  return sentence.search(/english/i) !== -1;
+}
+
+// (81) Find out whether the shape is a cube
+// https://www.codewars.com/kata/58d248c7012397a81800005c
+var cubeChecker = function (volume, side) {
+  return side > 0 && volume > 0 && side ** 3 == volume;
+};
+
+// (82) Difference of Volumes of Cuboids
+// https://www.codewars.com/kata/58cb43f4256836ed95000f97
+function findDifference(a, b) {
+  return Math.abs(a[0] * a[1] * a[2] - b[0] * b[1] * b[2]);
+}
+
+// (83) Find Multiples of a Number
+// https://www.codewars.com/kata/58ca658cc0d6401f2700045f
+function findMultiples(integer, limit) {
+  let arr = [];
+  for (let i = integer; i <= limit; i += integer) {
+    arr.push(i);
+  }
+  return arr;
+}
+
+// (84) Who is going to pay for the wall?
+// https://www.codewars.com/kata/58bf9bd943fadb2a980000a7
+function whoIsPaying(name) {
+  return name.length > 2 ? [name, name.slice(0, 2)] : [name];
+}
+
+// (85) Merge two sorted arrays into one
+// https://www.codewars.com/kata/5899642f6e1b25935d000161
+function mergeArrays(arr1, arr2) {
+  return [...new Set([...arr1, ...arr2])].sort((a, b) => a - b);
+}
+
+// (86) Calculate Price Excluding VAT
+// https://www.codewars.com/kata/5890d8bc9f0f422cf200006b
+function excludingVatPrice(price) {
+  return price !== null ? Number(((price * 100) / 115).toFixed(2)) : -1;
+}
+
+// (87) Simple Fun #1: Seats in Theater
+// https://www.codewars.com/kata/588417e576933b0ec9000045
+function seatsInTheater(nCols, nRows, col, row) {
+  return (nCols - col + 1) * (nRows - row);
+}
+
+// (88) NBA full 48 minutes average
+// https://www.codewars.com/kata/587c2d08bb65b5e8040004fd
+function pointsPer48(ppg, mpg) {
+  return Math.round(((48 * ppg) / mpg) * 10) / 10 || 0;
+}
