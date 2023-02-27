@@ -757,3 +757,80 @@ function seatsInTheater(nCols, nRows, col, row) {
 function pointsPer48(ppg, mpg) {
   return Math.round(((48 * ppg) / mpg) * 10) / 10 || 0;
 }
+
+// (89) Will there be enough space?
+// https://www.codewars.com/kata/5875b200d520904a04000003
+function enough(cap, on, wait) {
+  return on + wait >= cap ? on + wait - cap : 0;
+}
+
+// (90) Grasshopper - Terminal game combat function
+// https://www.codewars.com/kata/586c1cf4b98de0399300001d
+function combat(health, damage) {
+  return Math.max(health - damage, 0);
+}
+
+// (91) Ensure question
+// https://www.codewars.com/kata/5866fc43395d9138a7000006
+function ensureQuestion(s) {
+  return s.endsWith("?") ? s : s + "?";
+}
+
+// (92) All Star Code Challenge #18
+// https://www.codewars.com/kata/5865918c6b569962950002a1
+// function strCount(str, letter) {
+//   return str.split(letter).length - 1;
+// }
+// function strCount(str, letter) {
+//   return str.length - str.replace(new RegExp(letter, "gi"), '').length;
+// }
+function strCount(str, letter) {
+  let count = 0;
+  for (let item of str.split("")) {
+    if (item === letter) {
+      count++;
+    }
+  }
+  return count;
+}
+
+// (93) Thinkful - Logic Drills: Traffic light
+// https://www.codewars.com/kata/58649884a1659ed6cb000072
+function updateLight(current) {
+  return { green: "yellow", yellow: "red", red: "green" }[current];
+}
+
+// (94) Thinkful - Number Drills: Blue and red marbles
+// https://www.codewars.com/kata/5862f663b4e9d6f12b00003b
+function guessBlue(blueStart, redStart, bluePulled, redPulled) {
+  return (
+    (blueStart - bluePulled) / (blueStart - bluePulled + redStart - redPulled)
+  );
+}
+
+// (95) Will you make it?
+// https://www.codewars.com/kata/5861d28f124b35723e00005e
+const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+  return distanceToPump <= mpg * fuelLeft;
+};
+
+// (96) BASIC: Making Six Toast.
+// https://www.codewars.com/kata/5834fec22fb0ba7d080000e8
+// function sixToast(num) {
+//   return num - 6 < 0 ? (num - 6) * -1 : num - 6;
+// }
+function sixToast(num) {
+  return Math.abs(num - 6);
+}
+
+// (97) ES6 string addition
+// https://www.codewars.com/kata/582e4c3406e37fcc770001ad
+function joinStrings(string1, string2) {
+  return `${string1} ${string2}`;
+}
+
+// (98) Duck Duck Goose
+// https://www.codewars.com/kata/582e0e592029ea10530009ce
+function duckDuckGoose(players, goose) {
+  return players[(goose - 1) % players.length].name;
+}
